@@ -32,7 +32,7 @@ public class ATMInterface {
         Scanner scanner = new Scanner(System.in);
 
         // Create a bank account with an initial balance
-        BankAccount userAccount = new BankAccount(1000.0);
+        BankAccount userAccount = new BankAccount(100000.0);
 
         while (true) {
             System.out.println("\nAutomated Teller Machine");
@@ -49,7 +49,7 @@ public class ATMInterface {
                     System.out.print("Enter withdrawal amount: ");
                     double withdrawAmount = scanner.nextDouble();
                     if (userAccount.withdraw(withdrawAmount)) {
-                        System.out.println("Withdrawal successful. Remaining balance: ₹" + userAccount.getBalance());
+                        System.out.println("Withdrawal successful. Remaining balance: $" + userAccount.getBalance());
                     } else {
                         System.out.println("Insufficient balance. Unable to withdraw.");
                     }
@@ -59,11 +59,11 @@ public class ATMInterface {
                     System.out.print("Enter deposit amount: ");
                     double depositAmount = scanner.nextDouble();
                     userAccount.deposit(depositAmount);
-                    System.out.println("Deposit successful. Updated balance: ₹" + userAccount.getBalance());
+                    System.out.println("Deposit successful. Updated balance: $" + userAccount.getBalance());
                     break;
 
                 case 3:
-                    System.out.println("Current balance: ₹" + userAccount.getBalance());
+                    System.out.println("Current balance: $" + userAccount.getBalance());
                     break;
 
                 case 4:
